@@ -7,7 +7,7 @@
     <version>2.17-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Simple Multi Modules Build</name>
-<!--
+         
     <modules>
         <module>multi1</module>
         <module>multi2</module>
@@ -17,7 +17,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
--->
+
 
     <dependencies>
         <dependency>

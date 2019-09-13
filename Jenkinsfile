@@ -6,7 +6,7 @@ node {
    
     def mavenHome = "/usr/share/maven"
     def javaHome = "/usr/lib/jvm/java-8-openjdk-amd64"
-    def server = "http://192.168.201.229:8081"
+   def server = Artifactory.server 'jenkins-artifactory-server'
   }
 
     stage ('Clone') {
@@ -14,6 +14,8 @@ node {
     }
 
     stage ('Artifactory configuration') {
+       
+       server = Artifactory.server jenkins-artifactory-server
         Maven.tool = MAVEN_TOOL // Tool name from Jenkins configuration
         Maven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
         Maven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server

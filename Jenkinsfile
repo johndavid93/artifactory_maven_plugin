@@ -6,7 +6,7 @@ node {
    
     def mavenHome = "/usr/share/maven"
     def javaHome = "/usr/lib/jvm/java-8-openjdk-amd64"
-   def server = Artifactory.server 'jenkins-artifactory-server'
+   def server = Artifactory.newServer url: 'http://192.168.201.52:8081'
   }
 
     stage ('Clone') {
